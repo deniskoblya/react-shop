@@ -1,4 +1,4 @@
-function Product() {
+function Product(props) {
   return (
     <div className="product">
       <div className="product__img">
@@ -17,15 +17,15 @@ function Product() {
             />
           </svg>
         </button>
-        <img width={133} height={112} src="/img/products/1.jpg" alt="prod" />
+        <img width={133} height={112} src={props.imageUrl} alt="prod" />
       </div>
       <a href="/" className="product__link">
-        Мужские Кроссовки Nike Blazer Mid Suede
+        {props.title}
       </a>
       <div className="product__price">
         <div className="product__txt">
           <span>Цена:</span>
-          <b>12 999 руб.</b>
+          <b>{props.price}</b>
         </div>
         <button className="product__add-to-cart">
           <svg
